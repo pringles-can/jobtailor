@@ -1,0 +1,51 @@
+Senior Java Engineer — Batch Processing & Data Integration
+Midwest Mutual Insurance | Lansing, MI (Hybrid)
+
+About the role
+
+Our policy administration platform processes millions of premium and claims
+transactions nightly through a large suite of Oracle batch jobs. We are looking
+for a senior engineer who is comfortable in legacy enterprise environments and
+can make long-running batch processing faster, more reliable, and easier to
+support.
+
+This is a hands-on maintenance and modernization role. You will spend your time
+in Java, PL/SQL, and shell tooling, working closely with our operations team and
+with business analysts in underwriting and billing.
+
+Responsibilities
+
+- Maintain, troubleshoot, and tune a portfolio of 150+ nightly Oracle batch jobs
+- Diagnose and resolve production failures, including on-call rotation
+- Improve batch runtimes and reduce the nightly processing window
+- Modernize legacy job implementations while preserving exact billing behavior
+- Build and maintain ETL processes that exchange data with external carriers
+- Work with EDI and other flat-file formats from partner organizations
+- Write and optimize complex SQL against large Oracle schemas
+- Partner directly with business subject matter experts to translate
+  requirements into technical specifications
+- Support a Waterfall SDLC with formal release and change-control processes
+
+Required qualifications
+
+- 7+ years of professional software engineering experience
+- Strong Java and object-relational mapping experience (Hibernate or similar)
+- Deep SQL and Oracle experience, including performance tuning
+- Experience with batch processing and scheduled job frameworks
+- Experience with ETL and file-based data integration
+- Demonstrated ability to improve performance of existing systems
+- Comfort working in and maintaining legacy codebases
+- Experience supporting production systems
+
+Preferred qualifications
+
+- Insurance, healthcare, or other regulated industry background
+- EDI or standardized data interchange formats
+- Scripting experience (Bash, Groovy, Perl)
+- Experience mentoring junior engineers
+- Experience documenting undocumented legacy processes
+
+What we offer
+
+Stable, long-tenured team. Strong work-life balance with predictable release
+cadence. Full benefits, pension, and tuition reimbursement.

@@ -1,0 +1,67 @@
+National General is a part of The Allstate Corporation, which means we have the same innovative drive that keeps us a step ahead of our customers’ evolving needs. We offer home, auto and accident and health insurance, as well as other specialty niche insurance products, through a large network of independent insurance agents, as well as directly to consumers. 
+
+
+Job Description
+
+
+
+Company: National General
+
+National General Insurance is an Allstate company, meaning it operates under the Allstate umbrella while maintaining its own brand identity and specialized insurance products
+
+This relationship allows National General to leverage Allstate’s resources, technology, and financial stability while continuing to serve its customers with tailored insurance solutions.
+
+Employee benefits same as that of Allstate US Corporation employees
+
+ We are seeking a Senior Consultant II – AI/ML Engineer with proficiency in .NET engineering foundation and hands-on experience applying Machine Learning, Generative AI, and LLM technologies in enterprise environments.
+
+This is an applied engineering role focused on designing, building, and integrating AI-powered solutions into production systems rather than conducting research. The position combines AI/ML work with practical software engineering, data processing, and Azure-based solution delivery.
+
+What You'll Do
+
+Design and implement AI-enabled applications using C#/.NET, Azure, and modern AI/LLM services.
+
+Develop data ingestion, transformation, and automation pipelines for structured and unstructured data.
+
+Build and integrate AI capabilities into existing enterprise applications through APIs and services.
+
+Partner with business SMEs and technical teams to translate complex business challenges into scalable technical solutions.
+
+Evaluate, test, and optimize AI/ML outputs for accuracy, reliability, and production readiness.
+
+Support end-to-end delivery, including solution design, implementation, validation, documentation, and production handoff.
+
+Required Qualifications
+
+Software engineering experience with C#/.NET in enterprise-scale environments.
+
+Experience working with Machine Learning, Generative AI, LLMs, or AI-assisted automation solutions.
+
+Python and data engineering experience.
+
+Familiarity with Azure DevOps, CI/CD, observability, and enterprise application support.
+
+Experience building APIs, integrating applications, and working with structured data, JSON, and SQL databases.
+
+Hands-on experience with Azure cloud services and modern application architectures.
+
+Strong problem-solving, debugging, and stakeholder communication skills.
+
+Experience working directly with business users, translating requirements into scalable technical solutions.
+
+ Preferred Qualifications
+
+Experience with Azure OpenAI, GPT-based solutions, prompt engineering, LangChain/LangGraph, or similar AI frameworks.
+
+Experience with document processing, data extraction, automation, or intelligent workflow solutions.
+
+Experience in regulated or large-scale enterprise environments.
+
+The offered salary range for this role will be in the range of $140,000 to $150,000 annual only.
+
+ 
+
+Skills
+
+Application Development, Artificial Intelligence Markup Language, Azure Devops, Business Model Development, Business Process Development, C Sharp (Programming Language), Data Analytics, Data Engineering, Data Transformation, Enterprise Application, Machine Learning (ML), Microsoft .NET, Microsoft Azure, Microsoft Cloud, Predictive Analytics, Python (Programming Language), Structured Query Language (SQL)
+

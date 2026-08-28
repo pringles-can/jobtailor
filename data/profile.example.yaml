@@ -1,0 +1,115 @@
+# Example profile. Copy this to data/profile.yaml and replace with your own data.
+# data/profile.yaml is gitignored; only this example file is committed.
+
+contact:
+  name: Jordan Rivera
+  title: Senior Backend Engineer
+  tagline: Payments & Data Platforms
+  location: Austin, TX
+  email: jordan.rivera@example.com
+  phone: "+1 555 010 2020"
+  linkedin: linkedin.com/in/example
+  github: github.com/example
+
+summary: >-
+  Backend engineer with 8 years building payment and data platforms.
+
+education:
+  - credential: B.S. Computer Science
+    institution: University of Texas
+    year: "2016"
+
+# Canonical skill vocabulary. Accomplishment `skills` tags MUST come from this
+# list — selection filters on exact match, so drift here silently breaks it.
+skill_taxonomy:
+  languages: [python, sql]
+  ai: []
+  cloud: [aws, docker]
+  data: [redis, postgresql, data-pipelines]
+  practices: [performance-optimization, reliability, mentoring, documentation, leadership]
+
+accomplishments:
+  - id: pay-latency
+    employer: Northwind Payments
+    client: null          # null when direct-hire; a client name for consulting work
+    role: Senior Backend Engineer
+    start: "2021-03"
+    end: present
+    situation: The checkout API p99 latency had crept to 1.8s, hurting conversion.
+    task: Bring p99 under 500ms without a rewrite.
+    action: >-
+      Profiled the hot path, added a read-through Redis cache, and batched the
+      three synchronous downstream calls into one async fan-out.
+    result: Cut p99 latency from 1.8s to 420ms and lifted checkout conversion 6%.
+    metrics:
+      - "p99 1.8s -> 420ms"
+      - "+6% checkout conversion"
+    skills: [python, redis, performance-optimization]
+    # Multiple pre-written wordings of the same accomplishment. Tailoring picks
+    # the best fit for a given job, or writes a tighter one.
+    phrasings:
+      - >-
+        Cut checkout API p99 latency 77% (1.8s to 420ms) with read-through
+        caching and async fan-out, lifting conversion 6%.
+      - >-
+        Reduced payment checkout p99 latency to 420ms and improved conversion
+        by 6% by introducing Redis caching and batching downstream calls.
+      - >-
+        Owned a latency initiative that took checkout p99 from 1.8s to 420ms,
+        directly increasing conversion 6%.
+
+  - id: data-pipeline
+    employer: Northwind Payments
+    client: null
+    role: Senior Backend Engineer
+    start: "2021-03"
+    end: present
+    situation: Nightly reconciliation ran for 6 hours and often missed its SLA.
+    task: Make reconciliation reliable and finish before the morning close.
+    action: >-
+      Rebuilt the batch job as an idempotent, partitioned pipeline with
+      checkpointing and automatic retries.
+    result: Reduced runtime to 40 minutes and eliminated missed SLAs for a year.
+    metrics:
+      - "6h -> 40m runtime"
+      - "0 missed SLAs in 12 months"
+    skills: [python, data-pipelines, reliability]
+    phrasings:
+      - >-
+        Rebuilt nightly reconciliation as an idempotent partitioned pipeline,
+        cutting runtime from 6 hours to 40 minutes with zero missed SLAs.
+
+  - id: team-mentor
+    employer: Blue Harbor Software
+    client: null
+    role: Backend Engineer
+    start: "2017-06"
+    end: "2021-02"
+    situation: Two new hires were ramping slowly with no onboarding path.
+    task: Get them productive and shipping within a month.
+    action: >-
+      Wrote a service-by-service onboarding guide and paired daily on their
+      first tickets.
+    result: Both engineers shipped to production within three weeks.
+    metrics:
+      - "2 engineers productive in 3 weeks"
+    skills: [mentoring, documentation, leadership]
+    phrasings:
+      - >-
+        Onboarded two engineers to production in three weeks by authoring a
+        service onboarding guide and pairing daily.
+
+# Projects use a slightly different shape and are not employment. Keep them
+# separate so selection can weight them differently.
+projects:
+  - id: ledger-toy
+    name: Toy Double-Entry Ledger
+    stack: [python, postgresql]
+    deployment: null
+    start: "2024-01"
+    end: present
+    bullets:
+      - action: >-
+          Built a double-entry ledger with an append-only journal and
+          balance-invariant checks on every posting.
+        skills: [python, postgresql, reliability]

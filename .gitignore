@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+
+# Secrets — never commit
+.env
+
+# Timestamped run artifacts
+runs/
+
+# The real profile (only the example is committed)
+data/profile.yaml
+
+# OS / editor cruft
+.DS_Store
+.idea/
+.vscode/
