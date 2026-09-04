@@ -35,6 +35,11 @@ tailored resume `.docx`, plus a timestamped `runs/{timestamp}/` folder holding
 the resolved job text, the assembled prompt, and the raw API response (so you
 can diff runs when output quality changes).
 
+The `.docx` name is always prefixed with that same run timestamp — e.g.
+`20260904-130310-steven-prindle-resume.docx` — so a resume you've copied or
+emailed elsewhere still names the `runs/` folder that produced it. Passing
+`--out` keeps your directory and extension and only adds the prefix.
+
 Other job inputs:
 
 ```

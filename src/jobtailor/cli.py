@@ -8,6 +8,7 @@ to add behavior, similar to an attribute + source generator in C#.
 
 from __future__ import annotations
 
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -31,6 +32,32 @@ app = typer.Typer(help="Tailor your resume to a job description and emit a .docx
 @app.callback()
 def _main() -> None:
     """jobtailor: tailor a resume to a job description."""
+
+
+def _slugify(text: str) -> str:
+    r"""Reduce a name to lowercase hyphen-joined words: "Steven Prindle" -> "steven-prindle".
+
+    `re.sub(pattern, replacement, text)` replaces every match, like Regex.Replace
+    in C#. The `r"..."` prefix is a raw string (no backslash escaping), which is
+    the normal way to write patterns in Python. `[^\w]+` means "one or more
+    characters that are not letters/digits/underscore".
+    """
+    return re.sub(r"[^\w]+", "-", text.strip().lower()).strip("-")
+
+
+def _stamped_out_path(stamp: str, run_dir: Path, profile: Profile, out: Path | None) -> Path:
+    """Decide where the .docx goes, always prefixing the file name with the run stamp.
+
+    The stamp is the run folder's own name, so a resume that has been copied
+    somewhere else still points back at `runs/{stamp}/` for its prompt and raw
+    response.
+    """
+    if out is not None:
+        # Keep the caller's directory and extension; only rename the file itself.
+        # `Path.with_name` swaps the last path component (like changing just the
+        # file name in Path.Combine(dir, newName)).
+        return out.with_name(f"{stamp}-{out.name}")
+    return run_dir / f"{stamp}-{_slugify(profile.contact.name)}-resume.docx"
 
 
 def _load_profile(path: Path) -> Profile:
@@ -78,7 +105,7 @@ def tailor(
     run_dir = config.RUNS_DIR / stamp
     run_dir.mkdir(parents=True, exist_ok=True)
 
-    out_path = out if out is not None else run_dir / "resume.docx"
+    out_path = _stamped_out_path(stamp, run_dir, profile, out)
     unmatched = docx.render(profile, tailored, out_path)
 
     # Cache everything about this run for later diffing.
