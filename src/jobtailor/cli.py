@@ -106,7 +106,7 @@ def tailor(
     run_dir.mkdir(parents=True, exist_ok=True)
 
     out_path = _stamped_out_path(stamp, run_dir, profile, out)
-    unmatched = docx.render(profile, tailored, out_path)
+    unmatched = docx.render(profile, tailored, out_path, posting.description)
 
     # Cache everything about this run for later diffing.
     (run_dir / "job.txt").write_text(posting.description, encoding="utf-8")

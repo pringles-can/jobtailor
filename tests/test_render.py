@@ -10,6 +10,7 @@ from jobtailor.models import (
     Profile,
     Project,
     ProjectBullet,
+    SkillTaxonomy,
     TailoredBullet,
     TailoredResume,
 )
@@ -156,6 +157,35 @@ def test_experience_leads_when_newest_job_is_most_recent(tmp_path: Path):
     lines = _texts(out)
 
     assert lines.index("Experience") < lines.index("Projects")
+
+
+def test_role_skills_line_includes_unselected_accomplishments(tmp_path: Path):
+    """The skills line pools every tag for that role, not just the chosen bullets.
+
+    Two accomplishments share one role; only the first is selected. Kafka lives
+    on the *unselected* one and must still appear, while the job description
+    pushes the tags it mentions to the front of the line.
+    """
+    profile = _profile()
+    profile.skill_taxonomy = SkillTaxonomy(languages=["csharp"], data=["kafka", "sql-server"])
+    profile.skill_display = {"csharp": "C#", "sql-server": "SQL Server"}
+    profile.accomplishments[1].skills = ["sql-server"]
+    profile.accomplishments.append(
+        profile.accomplishments[1].model_copy(
+            update={"id": "sibling", "skills": ["kafka", "csharp"]}
+        )
+    )
+
+    tailored = TailoredResume(
+        summary="",
+        bullets=[TailoredBullet(accomplishment_id="new-job", text="Did a new thing.")],
+    )
+    out = tmp_path / "r.docx"
+    docx.render(profile, tailored, out, job_description="We need strong C# and Kafka skills.")
+    lines = _texts(out)
+
+    # One italic line under the role, matches first, then the rest.
+    assert "C#, Kafka, SQL Server" in lines
 
 
 def test_unknown_id_is_reported_not_silently_dropped(tmp_path: Path):

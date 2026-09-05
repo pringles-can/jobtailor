@@ -19,6 +19,7 @@ from pathlib import Path
 from docx import Document
 
 from jobtailor.models import Profile, TailoredResume
+from jobtailor.render import skills as skills_mod
 
 
 def _fmt_date(value: str | None) -> str:
@@ -63,12 +64,21 @@ def _add_meta_line(doc, text: str) -> None:
     run.italic = True
 
 
-def render(profile: Profile, tailored: TailoredResume, out_path: Path) -> list[str]:
+def render(
+    profile: Profile,
+    tailored: TailoredResume,
+    out_path: Path,
+    job_description: str = "",
+) -> list[str]:
     """Write a tailored resume to `out_path`.
 
     Returns the list of `accomplishment_id`s the model referenced that don't
     exist in the profile — normally empty. The caller warns about them rather
     than dropping them silently.
+
+    `job_description` only orders each role's skills line, putting the tags the
+    posting mentions first. It defaults to empty so the renderer stays usable
+    (and testable) without a posting; the line then keeps taxonomy order.
     """
     # Build id -> record lookups (a dict comprehension; like ToDictionary).
     accomplishments = {a.id: a for a in profile.accomplishments}
@@ -80,6 +90,17 @@ def render(profile: Profile, tailored: TailoredResume, out_path: Path) -> list[s
     jobs: dict[tuple[str, str | None, str, str, str], list[str]] = {}
     project_bullets: dict[str, list[str]] = {}
     unmatched: list[str] = []
+
+    # Every skill tag belonging to each role — drawn from *all* of that role's
+    # accomplishments, not just the ones whose bullets made this cut. A skill you
+    # used on the job is true whether or not its bullet won the selection.
+    role_skills: dict[tuple[str, str | None, str, str, str], list[str]] = {}
+    for acc in profile.accomplishments:
+        role_key = (acc.employer, acc.client, acc.role, acc.start, acc.end)
+        role_skills.setdefault(role_key, []).extend(acc.skills)
+
+    job_tokens = skills_mod.job_tokens(job_description)
+    taxonomy_order = profile.skill_taxonomy.all_tags()
 
     for bullet in tailored.bullets:
         acc = accomplishments.get(bullet.accomplishment_id)
@@ -131,6 +152,14 @@ def render(profile: Profile, tailored: TailoredResume, out_path: Path) -> list[s
             employer, client, role, start, end = key
             doc.add_heading(_org_label(employer, client), level=2)
             _add_meta_line(doc, f"{role}  |  {_date_range(start, end)}")
+            names = skills_mod.skills_for_role(
+                role_skills.get(key, []),
+                profile.skill_display,
+                taxonomy_order,
+                job_tokens,
+            )
+            if names:
+                _add_meta_line(doc, ", ".join(names))
             for text in bullets:
                 doc.add_paragraph(text, style="List Bullet")
 
@@ -143,7 +172,10 @@ def render(profile: Profile, tailored: TailoredResume, out_path: Path) -> list[s
             doc.add_heading(project.name, level=2)
             meta = _date_range(project.start, project.end)
             if project.stack:
-                meta = f"{', '.join(project.stack)}  |  {meta}"
+                # Same display map as the roles above, so a project's stack
+                # doesn't render as raw slugs next to a job's "C#, .NET".
+                stack = [skills_mod.display_name(t, profile.skill_display) for t in project.stack]
+                meta = f"{', '.join(stack)}  |  {meta}"
             _add_meta_line(doc, meta)
             for text in bullets:
                 doc.add_paragraph(text, style="List Bullet")

@@ -1,0 +1,78 @@
+Job Description:
+
+Company: Michigan Public Health Institute (MPHI)
+Position: Senior .NET Developer
+Location: Okemos, MI
+Schedule: Hybrid, 1 day per month onsite in Okemos, MI
+Top Skills Details:
+Full Stack .NET Development
+8+ years of hands-on full stack .NET development experience
+Strong experience building web applications from the ground up in Microsoft environments
+Ability to take ownership of entire applications from design through deployment
+MVC & .NET Core Development
+Strong and recent experience with traditional MVC architecture
+Proven experience developing web applications using .NET Core and MVC
+Experience working on pure MVC web applications is required
+Database & Backend Technologies
+Strong experience with Entity Framework
+Expertise in C# and Microsoft SQL Server
+Experience designing, maintaining, and managing application databases
+Leadership & Communication
+Strong communication and client-facing skills
+Ability to mentor junior developers and lead technical initiatives
+Comfortable working independently and managing multiple priorities simultaneously
+Manager's Hiring Priorities:
+Strong recent MVC experience is the top technical requirement.
+Candidates must have experience working in consulting-style environments managing 4-5 projects simultaneously.
+Looking for developers who are stronger in traditional MVC than Angular or microservices-focused development.
+Must be self-driven, able to work independently, and take ownership of applications.
+Strong communication skills and ability to interface directly with clients and stakeholders.
+Secondary Skills – Nice to Haves:
+Microservices experience
+Angular experience
+Experience leading development teams and mentoring junior staff
+
+Michigan Public Health Institute (MPHI) is a nonprofit public health organization whose primary customer is the Michigan Department of Health and Human Services. MPHI is seeking a Senior .NET Developer to lead the design, development, maintenance, and modernization of web-based applications supporting critical public health initiatives. This role requires a highly experienced full stack developer with deep expertise in traditional MVC application development, .NET Core, Entity Framework, C#, and SQL Server. The ideal candidate has thrived in consulting environments, successfully balancing multiple concurrent projects while providing technical leadership, mentoring less experienced developers, and collaborating directly with clients.
+
+Key Responsibilities:
+Design, develop, maintain, and enhance web applications.
+Lead development efforts for new web-based solutions and system enhancements.
+Design, maintain, and manage SQL Server databases.
+Serve as a technical lead by identifying, prioritizing, and driving project tasks and solutions.
+Mentor developers, conduct code reviews, and establish development standards.
+Perform solution risk analysis and recommend best practices.
+Gather technical requirements and collaborate directly with clients and stakeholders.
+Create and maintain technical documentation.
+Troubleshoot and provide technical support for applications and users.
+Lead initiatives focused on technology modernization and process improvement.
+Core Technical Requirements:
+8+ years of Full Stack .NET development experience.
+Strong experience with ASP.NET MVC and pure MVC web applications.
+Recent .NET Core web application development experience.
+Strong Entity Framework experience.
+Advanced C# development experience.
+Microsoft SQL Server experience.
+JavaScript development experience.
+Experience building web applications from the ground up within a Microsoft technology stack.
+Looking for the Following Qualities:
+Strong verbal and written communication skills.
+Proven ability to manage multiple concurrent projects and competing priorities.
+Self-starter with strong ownership mentality.
+Leadership and mentoring capabilities.
+Customer-focused approach with strong stakeholder management skills.
+Interview Process:
+Step 1: Virtual Interview
+Step 2: Onsite Interview
+Must be willing to attend the final onsite interview in Michigan.
+Employee Value Proposition (EVP):
+Opportunity to support large-scale public health initiatives across Michigan.
+Ability to influence technology modernization efforts.
+Technical leadership position with mentorship responsibilities.
+Exposure to diverse projects in a fast-paced consulting environment.
+Opportunity to work directly with government and public-sector stakeholders.
+Work Environment:
+Consulting-based environment supporting multiple clients and initiatives.
+Hybrid schedule with one onsite day per month in Okemos, MI.
+Collaborative team focused on application modernization and support.
+Direct interaction with clients, stakeholders, and internal development teams.
+Fast-paced environment where developers may be responsible for 4-5 concurrent projects.

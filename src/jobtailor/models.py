@@ -121,6 +121,12 @@ class Profile(BaseModel):
     summary: str = ""
     education: list[Education] = Field(default_factory=list)
     skill_taxonomy: SkillTaxonomy = Field(default_factory=SkillTaxonomy)
+
+    # Resume text for each taxonomy tag: {"aspnet-core": "ASP.NET Core"}. Tags
+    # are lowercase slugs so filtering can match exactly, which is not how they
+    # should *print*. Any tag left out falls back to capitalizing its words.
+    skill_display: dict[str, str] = Field(default_factory=dict)
+
     accomplishments: list[Accomplishment] = Field(default_factory=list)
     projects: list[Project] = Field(default_factory=list)
 
